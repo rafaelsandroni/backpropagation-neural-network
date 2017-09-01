@@ -254,12 +254,12 @@ def trainNetwork(network, train, learningRate, nEpoch, nOutputs):
         #exibe métricas sobre o comportamento da rede
         print('>epoch=%d, lrate=%.3f, error=%.3f' % (epoch, learningRate, sumError))
 
-#função de precição, dado uma rede já treinada e o valor a ser predito
+#precision
 def predict(network, row):
     outputs = forwardPropagate(network, row)
     return outputs.index(max(outputs))
     
-# Backpropagation Algorithm With Stochastic Gradient Descent
+# Backpropagation Algorithm
 def backPropagation(train, test, l_rate, n_epoch, n_hidden):
 	n_inputs = len(train[0]) - 1
 	n_outputs = len(set([row[-1] for row in train]))
